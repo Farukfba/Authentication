@@ -18,17 +18,16 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
 
   // sign user method
-  void signUserIn() async{
+  void signUserIn() async {
     // show loading circle
     showDialog(
       context: context,
       builder: (context) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
       },
     );
-
     // try sign in
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
